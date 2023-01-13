@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    <div class="box">
+        <h1>Factorial finder</h1>
+        <p>Enter number to generate factorial</p>
+        <label class="label">Enter Number:</label>
+        <div class="inputs">
+            <input type="number" id="number" />
+        <input type="button" value="generate" onclick="display()" /></div>
+        Factorial is:
+        <br /><br /><br />
+        <div id="result"></div>
+    </div>
+
+
+
+
+
+    <script>
+        
+        function display(){
+            var table;
+        table='<table id="mtable">';
+       
+        function factorial(){
+           
+                var n=document.getElementById("number").value;
+            let answer = 1;
+            let a="Factorial of "
+            if (n == 0 || n == 1){
+              return answer;
+            }
+            else if(n > 1){
+              for(var i = n; i >= 1; i--){
+                answer = answer * i;
+              }
+              return answer;
+            }
+            else{
+              return "number has to be positive."
+            }  
+          }
+          
+          answer = factorial()
+        
+          table+='<tr><td>'+answer+'</td></tr>';table+='</table>';
+document.getElementById("result").innerHTML = table;
+}
+    </script>
+</body>
+</html>
